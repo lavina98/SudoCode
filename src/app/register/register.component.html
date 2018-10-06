@@ -1,0 +1,123 @@
+<app-entry-nav></app-entry-nav>
+
+
+<div class="container-login100" style="background-image: url('../../assets/form/images/bg-01.jpg');">
+  <div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
+    <form class="login100-form validate-form" [formGroup]="register" (ngSubmit)="onSubmit()">
+				<span class="login100-form-title p-b-37">
+					Student Register
+				</span>
+
+      <div class="wrap-input100 validate-input m-b-20">
+        <input class="input100" type="text" formControlName="fname" placeholder="Enter first name">
+        <span class="focus-input100"></span>
+      </div>
+      <div *ngIf="register.value.fname ==='' && register.get('fname').touched === true">
+        <label><span style="color: red;text-align: center">* First Name cannot be blank</span></label>
+      </div>
+      <div class="wrap-input100 validate-input m-b-20">
+          <input class="input100" type="text" formControlName="lname" placeholder="Enter last name">
+          <span class="focus-input100"></span>
+        </div>
+        <div *ngIf="register.value.lname ==='' && register.get('lname').touched === true">
+          <label><span style="color: red;text-align: center">* Last Name cannot be blank</span></label>
+        </div>
+
+
+      <div class="wrap-input100 validate-input m-b-20">
+        <div align="left">
+          <input class="input100 col-6" type="text" formControlName="collegeid" placeholder="Enter college" disabled>
+        </div>
+        <div align="center">
+          <select formControlName="collegeid" class="col-8">
+            <option *ngFor="let item of coll" [value]="item"> {{item}}</option>
+          </select>
+        </div>
+
+        <div><label><span>&nbsp;</span></label></div>
+        <div *ngIf="register.value.collegeid ==='' && register.get('collegeid').touched === true">
+
+          <label><span style="color: red;text-align: center">*College cannot be blank</span></label>
+          </div>
+        <span class="focus-input100"></span>
+
+      </div>
+
+      <div class="wrap-input100 validate-input m-b-20">
+
+        <input class="input100" type="text" formControlName="email" placeholder="Enter email">
+        <span class="focus-input100"></span>
+        <div *ngIf="register.value.email ==='' && register.get('email').touched === true">
+
+          <label><span style="color: red;text-align: center">*Email cannot be blank</span></label>
+          </div>
+      </div>
+
+      <div class="wrap-input100 valid  ate-input m-b-20">
+        <input class="input100" type="text" formControlName="password" placeholder="Enter password">
+        <span class="focus-input100"></span>
+        <div *ngIf="register.value.password ==='' && register.get('password').touched === true">
+
+          <label><span style="color: red;text-align: center">*Password cannot be blank</span></label>
+          </div>
+      </div>
+
+
+      <div class="wrap-input100 validate-input m-b-20">
+        <div align="left">
+        <input class="input100" type="text" formControlName="departmentid" placeholder="Enter department">
+        </div>
+        <div align="center">
+        <select formControlName="departmentid" class="col-8">
+            <option *ngFor="let item of depart" [value]="item"> {{item}}</option>
+        </select>
+        </div>
+        <div><label><span>&nbsp;</span></label></div>
+        <div *ngIf="register.value.departmentid ==='' && register.get('departmentid').touched === true">
+          <label><span style="color: red;text-align: center">*Department cannot be blank</span></label>
+        </div>
+
+        <span class="focus-input100"></span>
+      </div>
+
+      <div class="wrap-input100 validate-input m-b-20">
+        <input class="input100" type="text" formControlName="start_year" placeholder="Enter year">
+        <div *ngIf="register.value.start_year ==='' && register.get('start_year').touched === true">
+
+          <label><span style="color: red;text-align: center">*Year cannot be blank</span></label>
+        </div>
+        <span class="focus-input100"></span>
+      </div>
+
+      <div class="container-login100-form-btn">
+        <button class="login100-form-btn" type="submit">
+          Register
+        </button>
+      </div>
+
+    </form>
+
+
+  </div>
+</div>
+
+
+
+<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+<script src="../../assets/form/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="../../assets/form/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+<script src="../../assets/form/vendor/bootstrap/js/popper.js"></script>
+<script src="../../assets/form/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="../../assets/form/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+<script src="../../assets/form/vendor/daterangepicker/moment.min.js"></script>
+<script src="../../assets/form/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+<script src="../../assets/form/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+<script src="../../assets/form/js/main.js"></script>
